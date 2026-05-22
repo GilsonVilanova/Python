@@ -1,23 +1,38 @@
 def calculadora():
-    x = input("Primeiro número: ")  
-    op = input("Operador: - + * /: ")
-    y = input("Segundo número: ")
-    try:
-        a = float(x.replace(",", "."))
-        b = float(y.replace(",", "."))  
-    except ValueError:
-        print("Entrada invalida.")
-        return
+    while True: #Laço de repeticao, fica nessa opcao ate digitar corretamente
+        x = input("Primeiro número: ")  
+        try:
+            a = float(x.replace(",",".")) #O float tbem ser pra aceitar apenas numeros
+            break
+        except ValueError: 
+            print("Digite apenas númeross.")
+           
+    while True: #
+        op = input("Operador: - + * /: ")
+        if op in ("-","+","*","/"):
+            break
+        print("Operador invalido, selecionar apenas - , + , * , / ")
+            
+        
+    while True:    
+        y = input("Segundo número: ")
+        try:
+            b = float(y.replace(",","."))
+            break
+        except ValueError:
+            print("Digite apenas números.")
+    
+
     if op == ('+'):
-        res = a + b
+            res = a + b
     elif op == ('-'):
-        res = a - b
+            res = a - b
     elif op == ('*'):
-        res = a * b
+            res = a * b
     elif op == ('/'):
-        res = a / b if b != 0 else "Inf"
+            res = a / b if b != 0 else "Inf"
     else:
-        res = "Operador inválido"
+            res = "Operador inválido"
     print(f"Resultado: {res}")
 
 calculadora()
