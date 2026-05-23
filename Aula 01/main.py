@@ -35,4 +35,9 @@ def calculadora():
             res = "Operador inválido"
     print(f"Resultado: {res}")
 
-calculadora()
+while True:  
+    calculadora()
+    continuar = input("Deseja calcular novamente? (s/n)").lower()
+    if continuar != 's':
+        input("\nPresione Enter para fechar o programa...") 
+        break
